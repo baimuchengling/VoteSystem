@@ -1,0 +1,30 @@
+spring:
+  profiles:
+    active: dev
+  ## Develop
+  devtools:
+    restart:
+      additional-paths: resources/**,static/**,templates/**
+  ## Spring Data JPA
+  datasource:
+    url: jdbc:mysql://localhost:3306/vote?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false&serverTimezone=CTT&allowPublicKeyRetrieval=true
+    username: root
+    password: root123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # Initialize the datasource with available DDL and DML scripts
+    initialization-mode: always
+
+  ## Hibernate Properties
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
+
+  thymeleaf:
+    cache: false
+
+  #jackson:
+    #date-format: yyyy-MM-dd HH:mm:ss
+    #time-zone: GMT+8
